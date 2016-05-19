@@ -33,14 +33,16 @@ public class Main {
 
         // Решение квадратного уравнения с пользовательским вводом переменных a, b, c
 
+        System.out.println("a*x*x + b*x + c = 0");
+
         // Объявляем переменные a, b, c, d (дискриминант) и x
 
         double a = 0;
         double b = 0;
         double c = 0;
-        double d = b * b - 4 * a * c;
-        double x = 0;
-        double x2 = 0;
+        double d;
+        double x;
+        double x2;
 
         Scanner sc = new Scanner(System.in); // создаем объект класса Scanner
 
@@ -71,13 +73,15 @@ public class Main {
 
         // считаем дискриминант и выводим его значение на экран
 
+        d = b * b - 4 *a*c;
+
         System.out.println("D = b*b - 4*a*c = " + d);
 
         // в зависимости от значения дискриминанта определяем количество корней
         // и выводим их на экран (или указываем на отсутствие корней)
         if (d > 0) {
-            x = (-b - (Math.sqrt(b * b - 4 * a * c)) / 2 * a);
-            x2 = (-b + (Math.sqrt(b * b - 4 * a * c)) / 2 * a);
+            x = (-b - (b * b - 4 * a * c) / 2 * a);
+            x2 = (-b + (b * b - 4 * a * c) / 2 * a);
             System.out.println("У уравнения два корня: x = " + x + ";" + " x2 = " + x2);
 
         }else if (d == 0){
@@ -85,7 +89,7 @@ public class Main {
             System.out.println("У уравнения один корень: x = " + x);
 
         }else{
-            System.out.println("Нет корней");
+            System.out.println("У уравнения нет корней");
 
         }
 
